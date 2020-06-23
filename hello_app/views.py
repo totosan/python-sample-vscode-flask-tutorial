@@ -2,9 +2,15 @@ from datetime import datetime
 from flask import Flask, render_template
 from . import app
 
+import traceback 
+
 @app.route("/")
 def home():
-    return render_template("home.html")
+    try:
+        template = render_template("home.html")
+    except Exception as e:
+        return traceback.format_exc()
+    return template
 
 @app.route("/about/")
 def about():
