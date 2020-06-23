@@ -1,4 +1,3 @@
-import traceback
 """ 
 In this sample, the Flask app object is contained within the hello_app *module*;
 that is, hello_app contains an __init__.py along with relative imports. Because
@@ -9,7 +8,6 @@ The solution is to provide a simple alternate startup file, like this present
 startup.py, that just imports the app object. You can then just specify
 startup:app in the Gunicorn command.
 """
-try:
-  from hello_app.webapp import app
-except Exception as e:
-  throw traceback.format_exc()
+from hello_app.webapp import app
+ex = Exception, "Alert"
+raise ex
