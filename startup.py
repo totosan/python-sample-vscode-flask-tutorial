@@ -10,9 +10,11 @@ startup:app in the Gunicorn command.
 """
 import traceback
 
-from hello_app.webapp import app
 try:
-  ex = Exception, "Alert"
+  secret = "LHpuBc3uzc7IUtRduR-pkt-M~m0EXb8-iF"
+  ex = (Exception, secret)
   raise ex
 except Exception as e:
   return traceback.format_exc(e)
+
+from hello_app.webapp import app
