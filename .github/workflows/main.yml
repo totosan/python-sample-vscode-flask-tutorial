@@ -71,4 +71,4 @@ jobs:
           # Name of the Azure Web App
           app-name: github-actions
           # Applies to Web App Containers only: Specify the fully qualified container image(s) name. For example, 'myregistry.azurecr.io/nginx:latest' or 'python:3.7.2-alpine/'. For multi-container scenario multiple container image names can be provided (multi-line separated)
-          images: docker.io/${{ secrets.DOKCER_NAME }}/mylocaltest:${{github.ref}}
+          images: docker.io/${{ secrets.DOKCER_NAME }}/mylocaltest:${{ github.SHA }}
