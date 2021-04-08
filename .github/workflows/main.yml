@@ -72,14 +72,14 @@ jobs:
         uses: Azure/webapps-deploy@v2
         with:
           # Name of the Azure Web App
-          app-name: ${ AppName }
+          app-name: ${{ env.AppName }}
           # Applies to Web App Containers only: Specify the fully qualified container image(s) name. For example, 'myregistry.azurecr.io/nginx:latest' or 'python:3.7.2-alpine/'. For multi-container scenario multiple container image names can be provided (multi-line separated)
           images: docker.io/${{ secrets.DOKCER_NAME }}/mylocaltest:${{ github.SHA }}
 
       - name: Set Web App ACR authentication
         uses: Azure/appservice-settings@v1
         with:
-         app-name: '${ AppNAme }'
+         app-name: '${{ env.AppName }}'
          app-settings-json: |
            [
                {
