@@ -3,7 +3,7 @@ name: "Code scanning - action"
 on: [pull_request, workflow_dispatch]
 
 jobs:
-  CodeQL-Build:
+  CodeQL:
 
     runs-on: ubuntu-latest
 
